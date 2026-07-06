@@ -1,0 +1,16 @@
+{
+  "name": "koto-badminton-booker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright automation to book a Koto badminton court on hacomono",
+  "type": "module",
+  "scripts": {
+    "book": "node book.js",
+    "dry": "DRY_RUN=true node book.js",
+    "login": "node book.js --login-only",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

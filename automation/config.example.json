@@ -1,0 +1,24 @@
+{
+  "bookingUrl": "https://koto-hsc.hacomono.jp/reserve/space/MYQQRVYL",
+
+  "// booking target": "What you want to book. Override any of these on the command line, e.g.  node book.js --date=2026-07-18 --court=\"Court 3\" --time=\"19:00\"",
+  "date": "2026-07-18",
+  "court": "Court 3",
+  "time": "19:00",
+
+  "// behavior": "headless=false shows the browser (recommended). confirm=false is a DRY RUN that stops before the final booking. slowMoMs slows actions so you can watch.",
+  "headless": false,
+  "confirm": false,
+  "slowMoMs": 150,
+  "timeoutMs": 30000,
+
+  "// selectors": "Text/patterns the script clicks. These are best-guess defaults for hacomono. Run once in dry-run with the browser visible; if a step can't find its target, copy the real button text here. Japanese defaults are included as fallbacks.",
+  "selectors": {
+    "loginButton": "(text=/log ?in/i) , (text=/ログイン/)",
+    "emailField": "input[type=email], input[name*=mail i], input[autocomplete=username]",
+    "passwordField": "input[type=password]",
+    "loginSubmit": "button:has-text(\"Log in\"), button:has-text(\"ログイン\"), button[type=submit]",
+    "nextButtons": ["次へ", "Next", "進む"],
+    "confirmButtons": ["予約する", "予約を確定", "確定", "Confirm", "Book", "Reserve"]
+  }
+}

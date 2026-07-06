@@ -7,11 +7,18 @@ iPad, or Mac.
 **Booking page:**
 <https://koto-hsc.hacomono.jp/reserve/space/MYQQRVYL>
 
-The booking site (hacomono) requires you to be logged in and doesn't
-expose a public API, so the reliable "shortcut" is one that **opens the
-reservation page instantly** — from your Home Screen, the Back Tap
-gesture, Siri, or a widget. From there the site remembers your login and
-you tap through the date/time/court in a few seconds.
+This repo has **two levels** depending on how much you want automated:
+
+| Level | What it does | Where |
+|-------|--------------|-------|
+| **Open the page** | One-tap Apple Shortcut that jumps to the booking page; you tap through login/date/court yourself. | this README + [`docs/APPLE_SHORTCUT.md`](docs/APPLE_SHORTCUT.md) |
+| **Full auto-book** | A script that logs in, picks the date, court and time, and confirms — triggered from an Apple Shortcut. | [`automation/`](automation/README.md) |
+
+iOS Shortcuts can only *open* a URL — they can't drive a multi-page
+login-and-booking flow. So the "open the page" shortcut is pure Shortcuts,
+while full auto-booking runs a small Playwright browser script on your Mac
+that the Shortcut kicks off. Start below for the simple version, or jump to
+[`automation/`](automation/README.md) for the full one.
 
 ---
 
